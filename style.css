@@ -1,18 +1,13 @@
 
 :root {
   --bg: #0b1020;
-  --panel: #0f172a;
   --text-main: #e5e7eb;
   --text-muted: #9ca3af;
   --accent: #38bdf8;
   --max-width: 900px;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -21,14 +16,12 @@ body {
   line-height: 1.75;
 }
 
-/* Navigation */
 nav {
   position: sticky;
   top: 0;
   backdrop-filter: blur(10px);
-  background: rgba(2,6,23,0.75);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-  z-index: 10;
+  background: rgba(2,6,23,0.85);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 .nav-container {
@@ -37,13 +30,9 @@ nav {
   padding: 1rem 1.25rem;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
-.nav-logo {
-  font-weight: 600;
-  letter-spacing: 0.02em;
-}
+.nav-logo { font-weight: 600; }
 
 .nav-links {
   list-style: none;
@@ -52,9 +41,9 @@ nav {
 }
 
 .nav-links a {
+  color: var(--text-muted);
   text-decoration: none;
   font-size: 0.9rem;
-  color: var(--text-muted);
 }
 
 .nav-links a.active,
@@ -62,49 +51,30 @@ nav {
   color: var(--accent);
 }
 
-/* Layout */
 main {
   max-width: var(--max-width);
-  margin: 5rem auto;
+  margin: 4rem auto;
   padding: 0 1.25rem;
 }
 
 section {
-  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
-  border: 1px solid rgba(255,255,255,0.06);
+  background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: 16px;
   padding: 2.75rem;
 }
 
-h1 {
-  font-size: 2.1rem;
-  margin-bottom: 1.5rem;
-}
+h1 { font-size: 2.1rem; margin-bottom: 1.5rem; }
+h2 { font-size: 1.25rem; margin-top: 2.25rem; margin-bottom: 0.75rem; }
 
-h2 {
-  font-size: 1.25rem;
-  margin-top: 2.25rem;
-  margin-bottom: 0.75rem;
-}
+p { color: var(--text-muted); margin-bottom: 1.25rem; }
 
-p, li {
-  color: var(--text-muted);
-  margin-bottom: 1rem;
-}
-
-ul {
-  margin-left: 1.25rem;
-}
+ul { margin-left: 1.25rem; }
+li { color: var(--text-muted); margin-bottom: 0.75rem; }
 
 footer {
   text-align: center;
-  color: var(--text-muted);
   font-size: 0.85rem;
-  margin: 4rem 0 2rem;
-}
-
-/* Responsive */
-@media (max-width: 700px) {
-  h1 { font-size: 1.7rem; }
-  section { padding: 1.75rem; }
+  color: var(--text-muted);
+  margin: 3rem 0 2rem;
 }
