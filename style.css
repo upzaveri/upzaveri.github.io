@@ -78,3 +78,11 @@ footer {
   color: var(--text-muted);
   margin: 3rem 0 2rem;
 }
+
+/* Home page profile image */
+.profile-img {
+  width: 220px;
+  max-width: 100%;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+}
