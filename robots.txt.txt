@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://upzaveri.github.io/sitemap.xml
