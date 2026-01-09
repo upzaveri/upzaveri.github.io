@@ -1,48 +1,95 @@
-// Inject navigation
-fetch("nav.html")
-  .then(res => res.text())
-  .then(html => {
-    document.getElementById("nav-placeholder").innerHTML = html;
-  });
+document.addEventListener("DOMContentLoaded", () => {
 
-/* =========================
-   ACTIVE NAV LINK
-   ========================= */
+  /* =========================
+     NAV INJECTION
+     ========================= */
 
-// Determine current page
-const currentPage = location.pathname.split("/").pop() || "index.html";
+  fetch("nav.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("nav-placeholder").innerHTML = html;
 
-// Highlight active navigation link
-document.querySelectorAll(".nav-links a").forEach(link => {
-  if (link.getAttribute("href") === currentPage) {
-    link.classList.add("active");
+      initNav();
+      initThemeToggle();
+    });
+
+  /* =========================
+     NAV + HAMBURGER
+     ========================= */
+
+  function initNav() {
+    const navToggle = document.querySelector(".nav-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    if (!navToggle || !navLinks) return;
+
+    navToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+      navToggle.textContent =
+        navLinks.classList.contains("open") ? "✕" : "☰";
+    });
+
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        navToggle.textContent = "☰";
+      });
+    });
   }
-});
 
+  /* =========================
+     THEME TOGGLE
+     ========================= */
 
-/* =========================
-   LIGHT / DARK MODE TOGGLE
-   ========================= */
+  function initThemeToggle() {
+    const toggleBtn = document.getElementById("theme-toggle");
+    if (!toggleBtn) return;
 
-const toggleBtn = document.getElementById("theme-toggle");
-const body = document.body;
+    const body = document.body;
+    const savedTheme = localStorage.getItem("theme");
 
-// Apply saved theme on load
-const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "light") {
+      body.classList.add("light");
+      toggleBtn.textContent = "🌞";
+    } else {
+      toggleBtn.textContent = "🌙";
+    }
 
-if (savedTheme === "light") {
-  body.classList.add("light");
-  toggleBtn.textContent = "🌞";
-} else {
-  toggleBtn.textContent = "🌙";
-}
+    toggleBtn.addEventListener("click", () => {
+      body.classList.toggle("light");
+      const isLight = body.classList.contains("light");
+      toggleBtn.textContent = isLight ? "🌞" : "🌙";
+      localStorage.setItem("theme", isLight ? "light" : "dark");
+    });
+  }
 
-// Toggle theme on click
-toggleBtn.addEventListener("click", () => {
-  body.classList.toggle("light");
+  /* =========================
+     CAROUSEL (OUTREACH)
+     ========================= */
 
-  const isLight = body.classList.contains("light");
+  const carousel = document.querySelector(".carousel");
 
-  toggleBtn.textContent = isLight ? "🌞" : "🌙";
-  localStorage.setItem("theme", isLight ? "light" : "dark");
+  if (carousel) {
+    const track = carousel.querySelector(".carousel-track");
+    const slides = carousel.querySelectorAll(".carousel-slide");
+    const nextBtn = carousel.querySelector(".carousel-btn.next");
+    const prevBtn = carousel.querySelector(".carousel-btn.prev");
+
+    let index = 0;
+
+    function updateCarousel() {
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    nextBtn.addEventListener("click", () => {
+      index = (index + 1) % slides.length;
+      updateCarousel();
+    });
+
+    prevBtn.addEventListener("click", () => {
+      index = (index - 1 + slides.length) % slides.length;
+      updateCarousel();
+    });
+  }
+
 });
