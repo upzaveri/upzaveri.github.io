@@ -66,6 +66,8 @@ nav {
 .nav-logo {
   font-weight: 600;
   white-space: nowrap;
+  color: var(--text-main);
+  opacity: 0.95;
 }
 
 .nav-links {
