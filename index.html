@@ -1,53 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title> Urja Zaveri 🚀 </title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Urja Zaveri — Planetary Scientist, ETH Zürich</title>
+  <meta name="description" content="Urja Zaveri is a PhD candidate at the Experimental Planetology Group, ETH Zürich, researching rocky exoplanet interiors, planetary formation, and science outreach." />
+  <meta name="keywords" content="Urja Zaveri, planetary scientist, ETH Zürich, exoplanets, rocky planets, planetary formation, science outreach, geochemistry" />
+  <meta name="author" content="Urja Zaveri" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://upzaveri.github.io/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://upzaveri.github.io/" />
+  <meta property="og:title" content="Urja Zaveri — Planetary Scientist" />
+  <meta property="og:description" content="PhD candidate at ETH Zürich researching rocky exoplanets and planetary formation." />
+  <meta property="og:image" content="https://upzaveri.github.io/images/profile.jpg" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Person","name":"Urja Zaveri","jobTitle":"PhD Candidate in Planetary Science","affiliation":{"@type":"Organization","name":"ETH Zürich – Experimental Planetology Group","url":"https://planetology.ethz.ch/"},"url":"https://upzaveri.github.io/","email":"urja.zaveri@eaps.ethz.ch","description":"Planetary scientist studying rocky exoplanets and planetary formation under reducing chemical conditions."}
+  </script>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div id="nav-placeholder"></div>
 
-<div id="nav-placeholder"></div>
-<main>
-<section class="home-layout">
+  <main>
+    <div class="home-wrap">
+      <canvas id="starfield"></canvas>
 
-  <img 
-    src="images/profile.jpg"
-    alt="Portrait of Urja Zaveri"
-    class="profile-img"
-  >
+      <div class="home-hero">
+        <div>
+          <p class="hero-eyebrow">PhD Candidate · ETH Zürich</p>
+          <h1 class="hero-name">Urja<br /><em>Zaveri</em></h1>
+          <p class="hero-tagline">Unravelling how planets form, what they are made of, and how their interiors evolve. One rocky world at a time.</p>
+          <div class="hero-cta">
+            <a href="research.html" class="btn btn-primary">✦ Explore Research</a>
+            <a href="about.html" class="btn btn-outline">About Me</a>
+          </div>
+        </div>
+        <div class="hero-photo-wrap">
+          <div class="orbit-ring"><div class="orbit-dot"></div></div>
+          <img src="images/profile.jpg" alt="Urja Zaveri, planetary scientist at ETH Zürich" />
+        </div>
+      </div>
 
-  <div>
-    <h1> Welcome! </h1>
+      <div class="solar-nav">
+        <p class="solar-label">✦ &nbsp; click to explore &nbsp; ✦</p>
+        <div class="solar-objects">
+          <div class="space-obj" onclick="window.location='research.html'">
+            <span class="rocket">🚀</span>
+            <span class="obj-label">Research</span>
+          </div>
+          <div class="space-obj" onclick="window.location='about.html'">
+            <span class="crystal">💎</span>
+            <span class="obj-label">About</span>
+          </div>
+          <div class="space-obj" onclick="window.location='outreach.html'">
+            <span class="scope">🔭</span>
+            <span class="obj-label">Outreach</span>
+          </div>
+          <div class="space-obj" onclick="window.location='contact.html'">
+            <span class="meteor">☄️</span>
+            <span class="obj-label">Contact</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 
-    <p>
-      I’m a PhD candidate at 
-      <a href="https://planetology.ethz.ch/" target="_blank" rel="noopener noreferrer">
-        Experimental Planetology Group
-      </a>
-      in ETH Zürich.
-    </p>
-
-    <p>
-      My research focuses on how planets form, what they are made of, and how their interiors evolve.
-      I am particularly interested in rocky exoplanets and planetary systems that form under reducing
-      chemical conditions.
-    </p>
-
-    <p>
-      Alongside research, I am passionate about science outreach and public engagement.
-      I really enjoy translating complex scientific ideas into accessible stories and creating
-      spaces where science feels curious and fun.
-    </p>
-  </div>
-
-</section>
-
-
-</div>
-</main>
-<footer>© Urja Zaveri</footer>
-<script src="script.js"></script>
+  <footer>© Urja Zaveri · <a href="https://planetology.ethz.ch/" target="_blank" rel="noopener">ETH Zürich</a></footer>
+  <script src="script.js"></script>
 </body>
 </html>
